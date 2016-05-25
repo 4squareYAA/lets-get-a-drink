@@ -28,6 +28,7 @@ gulp.task('browser-sync', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('./dev/styles/**/*.scss', ['styles']);
+	gulp.watch('./dev/js/*.js', ['scripts']);
 	gulp.watch('./public/*.html', reload);
 });
 
