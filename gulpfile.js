@@ -14,9 +14,10 @@ gulp.task('styles', function(){
 		.pipe(reload({stream: true}));
 });
 
-gulp.task('watch', function(){
-	gulp.watch('./dev/styles/**/*.scss', ['styles']);
-	gulp.watch('./public/*.html', reload);
+gulp.task('scripts', function(){
+	gulp.src('./dev/js/*.js')
+		.pipe(gulp.dest('./public/js'))
+		.pipe(reload({stream: true}));
 });
 
 gulp.task('browser-sync', function(){
@@ -25,4 +26,10 @@ gulp.task('browser-sync', function(){
 	})
 });
 
-gulp.task('default', ['browser-sync', 'styles', 'watch']);
+gulp.task('watch', function(){
+	gulp.watch('./dev/styles/**/*.scss', ['styles']);
+	gulp.watch('./dev/js/*.js', ['scripts']);
+	gulp.watch('./public/*.html', reload);
+});
+
+gulp.task('default', ['browser-sync', 'styles', 'scripts', 'watch']);
