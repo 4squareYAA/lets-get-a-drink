@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var babel = require('gulp-babel');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -17,10 +16,8 @@ gulp.task('styles', function(){
 
 gulp.task('scripts', function(){
 	gulp.src('./dev/js/*.js')
-		.pipe(babel({
-			presets: ['es2015']
-		}))
-		.pipe(gulp.dest('./public/js'));
+		.pipe(gulp.dest('./public/js'))
+		.pipe(reload({stream: true}));
 });
 
 gulp.task('browser-sync', function(){

@@ -1,5 +1,3 @@
-'use strict';
-
 var drinkFinder = {};
 
 drinkFinder.googleMapsApiKey = 'AIzaSyDUxZNOnvRPHmGndMfasnhuQ2pFFi6phzk';
