@@ -5,7 +5,17 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+// COLOR VARIABLES
+// ----------------
+
 $green: #DDDD3F;
 $purple: #8171DE;
 $darkgrey: #7F7F71;
 $lightgrey: #F5EEEE;
+
+
+// MAP AREA
+// ----------------
+.map {
+	height: 100%;
+}

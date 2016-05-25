@@ -1,4 +1,5 @@
 var drinkFinder = {};
+var map = {};
 
 drinkFinder.apiURL = 'https://api.foursquare.com/v2/venues/explore'
 
@@ -27,3 +28,8 @@ $(function() {
 	drinkFinder.init();
 
 }); 
+// GOOGLE MAP INIT
+// ---------------
+map.init = function() {
+
+};
