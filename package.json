@@ -1,0 +1,26 @@
+{
+  "name": "lets-get-a-drink",
+  "version": "1.0.0",
+  "description": "Foursquare API project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngkay/lets-get-a-drink.git"
+  },
+  "author": "Andrea Dubecki, Luke Van Bakel, Kevin Ng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngkay/lets-get-a-drink/issues"
+  },
+  "homepage": "https://github.com/ngkay/lets-get-a-drink#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.1"
+  }
+}
