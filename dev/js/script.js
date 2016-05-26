@@ -12,12 +12,15 @@ drinkFinder.init = function() {
 };
 
 drinkFinder.getFourSquare = function() {
-	$ajax({
+	$.ajax({
 		url: drinkFinder.apiURL,
 		method: 'GET',
-		dataType: 'json',
+		dataType: 'jsonp',
 		data: {
-			near: Chicago, IL
+			near: 'New York, NY',
+			client_id: drinkFinder.foursquareClientID,
+			client_secret: drinkFinder.foursquareClientSecret,
+			v: '20130815'
 		}
 	}).then(function(squareData) {
 		console.log(squareData);
