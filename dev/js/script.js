@@ -59,13 +59,13 @@ $(function(){
 	var template = Handlebars.compile(myTemplate);
 
 	var results = {
-		name: ,
-		status: ,
-		phone: ,
-		address: ,
-		rating: ,
-		url: ,
-		twitter:
+		name: "",
+		status: "",
+		phone: "",
+		address: "",
+		rating: "",
+		url: "",
+		twitter: ""
 	};
 
 	var filledTemplate = template(results);
