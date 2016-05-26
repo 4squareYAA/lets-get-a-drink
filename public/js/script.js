@@ -7,8 +7,23 @@ drinkFinder.googleMapsApiKey = 'AIzaSyDUxZNOnvRPHmGndMfasnhuQ2pFFi6phzk';
 drinkFinder.foursquareClientID = 'SJ2VFBCBNNTYMAPC3WJN0BKG4VDR3CFC1JDGAYCNAPHDKRS5';
 drinkFinder.foursquareClientSecret = 'BBHGS4D2G3VBGRIKSGAIKQBXN3JK4IO5ZRROZBE5L5MZ20PI';
 
+$(function() {
+	drinkFinder.init();
+});
+
+drinkFinder.getGeocode = function() {
+	navigator.geolocation.getCurrentPosition(success);
+	function success(position) {
+		drinkFinder.latitude = position.coords.latitude;
+		drinkFinder.longitude = position.coords.longitude;
+		console.log(drinkFinder.latitude);
+		console.log(drinkFinder.longitude);
+		drinkFinder.getFourSquare();
+	};
+};
+
 drinkFinder.init = function() {
-	drinkFinder.getFourSquare();
+	drinkFinder.getGeocode();
 };
 
 drinkFinder.getFourSquare = function() {
@@ -17,10 +32,11 @@ drinkFinder.getFourSquare = function() {
 		method: 'GET',
 		dataType: 'jsonp',
 		data: {
-			near: 'New York, NY',
 			client_id: drinkFinder.foursquareClientID,
 			client_secret: drinkFinder.foursquareClientSecret,
 			v: '20130815',
+			// near: 'New York, NY',
+			ll: drinkFinder.latitude + ',' + drinkFinder.longitude,
 			section: 'coffee'
 		}
 	}).then(function(squareData) {
@@ -28,10 +44,6 @@ drinkFinder.getFourSquare = function() {
 	});
 };
 
-$(function() {
-	drinkFinder.init();
-
-}); 
 // GOOGLE MAP INIT
 // ---------------
 map.init = function() {
