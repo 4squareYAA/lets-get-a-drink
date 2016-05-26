@@ -21,7 +21,7 @@ drinkFinder.getFourSquare = function() {
 			client_id: drinkFinder.foursquareClientID,
 			client_secret: drinkFinder.foursquareClientSecret,
 			v: '20130815',
-			section: 'drinks'
+			section: 'coffee'
 		}
 	}).then(function(squareData) {
 		console.log(squareData);
