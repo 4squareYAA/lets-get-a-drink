@@ -17,7 +17,7 @@ drinkFinder.getFourSquare = function() {
 		method: 'GET',
 		dataType: 'jsonp',
 		data: {
-			near: 'New York, NY',
+			near: 'Hertle Ave., Toronto, ON',
 			client_id: drinkFinder.foursquareClientID,
 			client_secret: drinkFinder.foursquareClientSecret,
 			v: '20130815',
