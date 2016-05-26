@@ -128,9 +128,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 * {
   box-sizing: border-box; }
 
-
-
-
 html {
   font-size: 62.5%; }
 
@@ -168,7 +165,6 @@ header {
   max-width: 1920px;
   margin: 0 auto;
   padding: 40px; }
-
 
 .map {
   height: 100%; }
