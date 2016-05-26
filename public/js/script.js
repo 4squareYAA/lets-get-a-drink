@@ -47,9 +47,14 @@ drinkFinder.getFourSquare = function() {
 };
 
 drinkFinder.result = function(squareData) {
-	drinkFinder.name = squareData.response.groups[0].items[0].venue.name;
-	console.log(drinkFinder.name)
-
+	drinkFinder.info = squareData.response.groups[0].items;
+	console.log(drinkFinder.info)
+	// drinkFinder.status = squareData.response.groups[0].items[0].venue.hours.status;
+	drinkFinder.info.forEach(function(location) {
+		var name = location.venue.name;
+		console.log(name);
+		
+	})
 }
 
 // GOOGLE MAP INIT
@@ -64,6 +69,8 @@ map.init = function() {
 drinkFinder.handlebars = function(){
 	var myTemplate = $("#dranks").html();
 	var template = Handlebars.compile(myTemplate);
+
+
 
 	var results = {
 		name: "",
