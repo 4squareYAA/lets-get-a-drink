@@ -20,7 +20,8 @@ drinkFinder.getFourSquare = function() {
 			near: 'New York, NY',
 			client_id: drinkFinder.foursquareClientID,
 			client_secret: drinkFinder.foursquareClientSecret,
-			v: '20130815'
+			v: '20130815',
+			section: 'drinks'
 		}
 	}).then(function(squareData) {
 		console.log(squareData);
