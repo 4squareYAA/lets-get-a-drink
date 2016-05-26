@@ -164,7 +164,8 @@ header {
   width: 90%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 40px; }
+  padding: 40px;
+  height: 500px; }
 
 #map {
   height: 100%; }
