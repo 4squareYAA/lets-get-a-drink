@@ -41,9 +41,21 @@ drinkFinder.getFourSquare = function() {
 		}
 	}).then(function(squareData) {
 		console.log(squareData);
+		drinkFinder.result(squareData);
 		// drinkFinder.display(squareData.response)
 	});
 };
+
+drinkFinder.result = function(squareData) {
+	drinkFinder.info = squareData.response.groups[0].items;
+	console.log(drinkFinder.info)
+	// drinkFinder.status = squareData.response.groups[0].items[0].venue.hours.status;
+	drinkFinder.info.forEach(function(location) {
+		var name = location.venue.name;
+		console.log(name);
+		
+	})
+}
 
 // GOOGLE MAP INIT
 // ---------------
@@ -54,21 +66,23 @@ map.init = function() {
 
 // HANDLEBARS
 // ----------------
-$(function(){
+drinkFinder.handlebars = function(){
 	var myTemplate = $("#dranks").html();
 	var template = Handlebars.compile(myTemplate);
 
+
+
 	var results = {
-		name: ,
-		status: ,
-		phone: ,
-		address: ,
-		rating: ,
-		url: ,
-		twitter:
+		name: "",
+		status: "",
+		phone: "",
+		address: "",
+		rating: "",
+		url: "",
+		twitter: ""
 	};
 
 	var filledTemplate = template(results);
 
 	$("#resultInfo").append(filledTemplate);
-});
+};
