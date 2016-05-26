@@ -24,6 +24,7 @@ drinkFinder.getFourSquare = function() {
 		}
 	}).then(function(squareData) {
 		console.log(squareData);
+		// drinkFinder.display(squareData.response)
 	});
 };
 
@@ -36,3 +37,25 @@ $(function() {
 map.init = function() {
 
 };
+
+
+// HANDLEBARS
+// ----------------
+$(function(){
+	var myTemplate = $("#dranks").html();
+	var template = Handlebars.compile(myTemplate);
+
+	var results = {
+		name: ,
+		status: ,
+		phone: ,
+		address: ,
+		rating: ,
+		url: ,
+		twitter:
+	};
+
+	var filledTemplate = template(results);
+
+	$("#resultInfo").append(filledTemplate);
+});

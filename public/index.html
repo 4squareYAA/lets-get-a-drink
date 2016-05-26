@@ -6,6 +6,17 @@
 	<link rel="stylesheet" href="styles/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+	
+	<script id="dranks" type="x-handlebars-template">
+	<h2>{{name}}</h2>
+	<p>{{status}}</p>
+	<p>{{phone}}</p>
+	<p>{{address}}</p>
+	<p>{{rating}}</p>
+	<p>{{url}}</p>
+	<p>{{twitter}}</p>
+
+	</script>
 </head>
 <body>
 	<header>
@@ -15,6 +26,7 @@
 			</div>
 		</div>
 	</header>
+	<main id ="resultInfo"></main>
 	<section>
 		<div class="wrapper">
 			<p>map and stuff goes here</p>
@@ -31,6 +43,8 @@
 	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUxZNOnvRPHmGndMfasnhuQ2pFFi6phzk">
     </script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+	<!-- HANDLEBARS3 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 	<script src="js/script.js"></script>
 
 
