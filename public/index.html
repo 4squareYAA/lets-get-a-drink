@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Let's Grab A Drink!</title>
+	<title>Let's Get A Drink!</title>
 	<link rel="stylesheet" href="styles/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="../favicons/favicon-32x32.png" sizes="32x32">
 </head>
 <body>
 	<header>
@@ -22,14 +23,12 @@
 					<label for="drinks">Alcoholic Drinks</label>
 				</div>
 				<input type="submit" value="Search">
+				<input type="submit" class="refresh" value="Refresh">
 			</form>
 		</div>
 	</header>
-	<main id ="resultInfo"></main>
-	<section>
+	<section class="map-container">
 		<div class="wrapper">
-			<p>map and stuff goes here</p>
-
 			<!-- SPOT RESERVED FOR MAP TO APPEAR -->
 			<div id="map"></div>
 		</div>
@@ -39,8 +38,7 @@
 	</footer>
 
 	<!-- TO ACCESS GOOGLE MAPS API? -->
-	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUxZNOnvRPHmGndMfasnhuQ2pFFi6phzk">
-    </script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUxZNOnvRPHmGndMfasnhuQ2pFFi6phzk"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
 	<script src="js/script.js"></script>
 

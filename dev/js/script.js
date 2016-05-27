@@ -18,6 +18,9 @@ drinkFinder.init = function() {
 		e.preventDefault();
 		drinkFinder.getUserChoice();
 	});
+	$( ".refresh" ).click(function() {
+		location.reload(true);
+	});
 };
 
 drinkFinder.getGeocode = function() {
@@ -54,6 +57,7 @@ drinkFinder.getFourSquare = function() {
 		map.init();
 		drinkFinder.result(squareData);
 		// drinkFinder.display(squareData.response)
+		$('.map-container').css('right', 0);
 	});
 };
 
@@ -88,11 +92,10 @@ drinkFinder.makeMarker = function(location, content){
 	var infowindow = new google.maps.InfoWindow({
 	  content: content
 	});
-	marker.addListener('click', function() {	
 
-		createInfoWindow(marker, content)
-    
+	marker.addListener('click', function() {
 
+		createInfoWindow(marker, content);
  	});
 };
 
@@ -181,3 +184,11 @@ map.init = function() {
 
 
 
+=======
+		zoom: 16,
+		scrollwheel: false,
+		mapTypeControl: false
+	});
+};
+
+>>>>>>> 85eaca2fe63ea1ee13beb51f1a25b4326fcda7e2
