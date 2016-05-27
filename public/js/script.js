@@ -31,7 +31,7 @@ drinkFinder.getGeocode = function() {
 		drinkFinder.longitude = position.coords.longitude;
 		console.log(drinkFinder.latitude);
 		console.log(drinkFinder.longitude);
-		$('input[type=submit]').fadeIn(800);
+		$('input[type=submit]').css('opacity', 1);
 	};
 };
 
@@ -76,7 +76,7 @@ drinkFinder.result = function(squareData) {
 		var rating = location.venue.rating;
 		var link = location.venue.url;
 		var twitter = location.venue.contact.twitter;
-		var contentString = "<div class='infoWindow'>" + "<h1>" + name + "</h1>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>" + rating + "</p>" + "<p>" + link + "</p>" + "<p>" + twitter + "</p>";
+		var contentString = "<div class='infoWindow'>" + "<h2>" + name + "</h2>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>" + rating + "</p>" + "<p>" + link + "</p>" + "<p>" + twitter + "</p>";
 
 		drinkFinder.makeMarker(location, contentString);
 	});
@@ -91,14 +91,12 @@ drinkFinder.makeMarker = function(location, content){
 		map: map,
 		position: myLatLng
 	});
-	// var infowindow = new google.maps.InfoWindow({
-	//   content: content
-	// });
 
 	marker.addListener('click', function() {
 		if (drinkFinder.windowIsOpen === true) {
 			drinkFinder.infowindow.close();
 		}
+
 		drinkFinder.windowIsOpen = true
 		createInfoWindow(marker, content);
  	});
@@ -109,8 +107,6 @@ function createInfoWindow(marker, content){
 	drinkFinder.infowindow = new google.maps.InfoWindow({
 		content: content
 	});
-
-
 
 	drinkFinder.infowindow.open(map, marker);
 }
