@@ -87,8 +87,8 @@ drinkFinder.result = function(squareData) {
 		if(location.venue.contact.twitter != undefined){
 		var twitter = location.venue.contact.twitter;}
 		else {var twitter = '';} 
-		var contentString = "<div class='infoWindow'>" + "<h1>" + name + "</h1>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>" + rating + "</p>" + "<p>" + link + "</p>" + "<p>" + twitter + "</p>";
-
+		var contentString = "<div class='infoWindow'>" + "<h2>" + name + "</h2>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>Rating: " + rating + "</p>" + "<p>" + link + "</p>" + "<p>Twitter: " + twitter + "</p>";
+		
 		drinkFinder.makeMarker(location, contentString);
 	});
 
