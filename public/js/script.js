@@ -123,7 +123,6 @@ map.init = function() {
 		scrollwheel: false,
 		mapTypeControl: false});
 
-
 		var styles = [
 		  {
 		    "featureType": "road.local",
