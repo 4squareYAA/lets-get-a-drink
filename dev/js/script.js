@@ -91,14 +91,12 @@ drinkFinder.makeMarker = function(location, content){
 		map: map,
 		position: myLatLng
 	});
-	// var infowindow = new google.maps.InfoWindow({
-	//   content: content
-	// });
 
 	marker.addListener('click', function() {
 		if (drinkFinder.windowIsOpen === true) {
 			drinkFinder.infowindow.close();
 		}
+
 		drinkFinder.windowIsOpen = true
 		createInfoWindow(marker, content);
  	});
@@ -109,8 +107,6 @@ function createInfoWindow(marker, content){
 	drinkFinder.infowindow = new google.maps.InfoWindow({
 		content: content
 	});
-
-
 
 	drinkFinder.infowindow.open(map, marker);
 }
