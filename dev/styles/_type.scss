@@ -27,4 +27,10 @@ h3 {
 
 a {
 	text-decoration: none;
+	color: #FFF;
+	border-bottom: 1px solid $purple;
+
+	&:hover {
+		border-bottom: 1px solid $green;
+	}
 }
