@@ -38,7 +38,11 @@ drinkFinder.getGeocode = function() {
 drinkFinder.getUserChoice = function() {
 	drinkFinder.userChoice = $('input[name=beverage]:checked').val();
 	console.log(drinkFinder.userChoice);
-	drinkFinder.getFourSquare();
+	if(drinkFinder.userChoice != undefined){
+		drinkFinder.getFourSquare();
+	} else {
+		$('.choose-message').empty().append('Please choose a type of drink.');
+	}
 };
 
 drinkFinder.getFourSquare = function() {
