@@ -41,7 +41,7 @@ header {
 
 .title {
 	padding: 15px 30px;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 	background: rgba(0,0,0,.5);
 	color: #FFF;
 	border: 10px solid $purple;
@@ -114,6 +114,7 @@ input[type=submit] {
 	position: absolute;
 	top: 0;
 	right: -100%;
+	display: none;
 	transition: all .75s;
 }
 
