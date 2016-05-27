@@ -150,7 +150,11 @@ h3 {
   line-height: 25px; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #FFF;
+  border-bottom: 1px solid #8171DE; }
+  a:hover {
+    border-bottom: 1px solid #DDDD3F; }
 
 body {
   height: 100vh;
