@@ -69,14 +69,25 @@ drinkFinder.result = function(squareData) {
 
 	drinkFinder.info.forEach(function(location) {
 		var name = location.venue.name;
-		if(location.venue.hours != undefined){
+		if(location.venue.hours != undefined && location.venue.hours.status != undefined){
 		var status = location.venue.hours.status;}
-		var address = location.venue.location.formattedAddress;
-		var number = location.venue.contact.formattedPhone;
-		var rating = location.venue.rating;
-		var link = location.venue.url;
-		var twitter = location.venue.contact.twitter;
-		var contentString = "<div class='infoWindow'>" + "<h2>" + name + "</h2>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>Rating: " + rating + "</p>" + "<p>" + link + "</p>" + "<p>Twitter: " + twitter + "</p>";
+		else{var status = '';}
+		if(location.venue.location.formattedAddress != undefined){
+		var address = location.venue.location.formattedAddress;}
+		else{var address = '';}
+		if(location.venue.contact.formattedPhone != undefined){
+		var number = location.venue.contact.formattedPhone;}
+		else{var number = '';}
+		if(location.venue.rating != undefined){
+		var rating = location.venue.rating;}
+		else{var rating = '';}
+		if(location.venue.url != undefined){
+		var link = location.venue.url;}
+		else {var link = '';} 
+		if(location.venue.contact.twitter != undefined){
+		var twitter = location.venue.contact.twitter;}
+		else {var twitter = '';} 
+		var contentString = "<div class='infoWindow'>" + "<h1>" + name + "</h1>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>" + rating + "</p>" + "<p>" + link + "</p>" + "<p>" + twitter + "</p>";
 
 		drinkFinder.makeMarker(location, contentString);
 	});
