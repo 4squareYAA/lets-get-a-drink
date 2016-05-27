@@ -233,6 +233,12 @@ input[type=submit] {
   right: -100%;
   transition: all .75s; }
 
+.infoWindow {
+  padding: 10px;
+  line-height: 20px; }
+  .infoWindow h2 {
+    margin: 10px 0; }
+
 .wrapper {
   width: 100%;
   height: 100%; }
