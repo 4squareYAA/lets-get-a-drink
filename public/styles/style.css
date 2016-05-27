@@ -150,7 +150,11 @@ h3 {
   line-height: 25px; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #FFF;
+  border-bottom: 1px solid #8171DE; }
+  a:hover {
+    border-bottom: 1px solid #DDDD3F; }
 
 body {
   height: 100vh;
@@ -174,7 +178,7 @@ header {
 
 .title {
   padding: 15px 30px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   background: rgba(0, 0, 0, 0.5);
   color: #FFF;
   border: 10px solid #8171DE;
@@ -235,6 +239,7 @@ input[type=submit] {
   position: absolute;
   top: 0;
   right: -100%;
+  display: none;
   transition: all .75s; }
 
 .infoWindow {

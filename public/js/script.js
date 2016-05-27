@@ -63,7 +63,7 @@ drinkFinder.getFourSquare = function() {
 		map.init();
 		drinkFinder.result(squareData);
 		// drinkFinder.display(squareData.response)
-		$('.map-container').css('right', 0);
+		$('.map-container').fadeIn(800).css('right', 0);
 	});
 };
 
