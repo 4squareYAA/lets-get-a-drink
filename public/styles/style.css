@@ -203,7 +203,6 @@ label {
   display: inline-block;
   background: rgba(0, 0, 0, 0.6);
   color: #FFF;
-  border-radius: 3px;
   font-family: 'Quicksand', sans-serif;
   font-size: 3rem;
   font-weight: 400;
@@ -211,6 +210,7 @@ label {
   position: relative;
   transition: all .25s; }
   label:hover {
+    border-radius: 3px;
     box-shadow: 5px 5px 0 0 #8171DE; }
 
 input[type=submit] {
@@ -225,7 +225,7 @@ input[type=submit] {
   font-size: 1.5rem;
   font-weight: 400;
   outline: none;
-  transition: all .25s, opacity .8s; }
+  transition: all .25s; }
   input[type=submit]:hover {
     background: #8171DE;
     color: #FFF;
@@ -255,9 +255,6 @@ input[type=submit] {
 
 #map {
   height: 100%; }
-
-.infoWindow {
-  font-size: 1.35rem; }
 
 footer {
   width: 50%;
