@@ -119,7 +119,6 @@ map.init = function() {
 
 		map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: drinkFinder.latitude, lng: drinkFinder.longitude},
-<<<<<<< HEAD
 		zoom: 15})
 
 		var styles = [
