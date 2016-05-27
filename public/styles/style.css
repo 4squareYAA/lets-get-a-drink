@@ -240,6 +240,10 @@ input[type=submit] {
 #map {
   height: 100%; }
 
+.infoWindow {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem; }
+
 footer {
   width: 50%;
   padding-left: 5%;
