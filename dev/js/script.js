@@ -18,6 +18,9 @@ drinkFinder.init = function() {
 		e.preventDefault();
 		drinkFinder.getUserChoice();
 	});
+	$( ".refresh" ).click(function() {
+    location.reload(true);
+});
 };
 
 drinkFinder.getGeocode = function() {
@@ -115,6 +118,9 @@ function createInfoWindow(marker, content){
 map.init = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: drinkFinder.latitude, lng: drinkFinder.longitude},
-		zoom: 15
+		zoom: 15,
+		scrollwheel: false,
+		mapTypeControl: false
 	});
 };
+
