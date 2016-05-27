@@ -30,6 +30,7 @@ drinkFinder.getGeocode = function() {
 		drinkFinder.longitude = position.coords.longitude;
 		console.log(drinkFinder.latitude);
 		console.log(drinkFinder.longitude);
+		$('input[type=submit]').fadeIn(800);
 	};
 };
 

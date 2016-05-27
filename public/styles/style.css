@@ -213,6 +213,7 @@ input[type=submit] {
   color: #FFF;
   border: 3px solid #8171DE;
   border-radius: 2px;
+  display: none;
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
@@ -226,6 +227,7 @@ input[type=submit] {
 .map-container {
   width: 48%;
   height: 100%;
+  background: #DDDD3F;
   position: absolute;
   top: 0;
   right: -100%;
