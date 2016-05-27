@@ -19,8 +19,8 @@ drinkFinder.init = function() {
 		drinkFinder.getUserChoice();
 	});
 	$( ".refresh" ).click(function() {
-    location.reload(true);
-});
+		location.reload(true);
+	});
 };
 
 drinkFinder.getGeocode = function() {
@@ -57,6 +57,7 @@ drinkFinder.getFourSquare = function() {
 		map.init();
 		drinkFinder.result(squareData);
 		// drinkFinder.display(squareData.response)
+		$('.map-container').css('right', 0);
 	});
 };
 

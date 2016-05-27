@@ -15,20 +15,27 @@ $lightgrey: #F5EEEE;
 
 @import 'type';
 
-// HERO IMAGE HEADER
-header {
-	width: 100%;
+body {
 	height: 100vh;
 	background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(http://unsplash.it/1000/1000/) no-repeat center;
 	background-size: cover;
+	position: relative;
+}
+
+// HERO IMAGE HEADER
+header {
+	width: 100%;
+	height: 100%;
 	display: flex;
+	align-items: center;
 	// z-index: -10;
 }
 
 .splash-info {
-	width: 80%;
+	width: 50%;
 	max-width: 1920px;
-	margin: auto;
+	padding-left: 5%;
+	// margin: auto;
 	color: #FFF;
 }
 
@@ -98,16 +105,30 @@ input[type=submit] {
 	}
 }
 
+.map-container {
+	width: 48%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: -100%;
+	transition: all .75s;
+}
+
 .wrapper {
-	width: 90%;
-	max-width: 1920px;
-	height: 800px;
-	margin: 0 auto;
-	padding: 40px;
+	width: 100%;
+	height: 100%;
 }
 
 // MAP AREA
 // ----------------
 #map {
 	height: 100%;
+}
+
+footer {
+	width: 50%;
+	padding-left: 5%;
+	bottom: 5%;
+	color: #FFF;
+	position: absolute;
 }
