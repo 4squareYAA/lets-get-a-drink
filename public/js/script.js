@@ -6,6 +6,7 @@ drinkFinder.apiURL = 'https://api.foursquare.com/v2/venues/explore'
 drinkFinder.googleMapsApiKey = 'AIzaSyDUxZNOnvRPHmGndMfasnhuQ2pFFi6phzk';
 drinkFinder.foursquareClientID = 'SJ2VFBCBNNTYMAPC3WJN0BKG4VDR3CFC1JDGAYCNAPHDKRS5';
 drinkFinder.foursquareClientSecret = 'BBHGS4D2G3VBGRIKSGAIKQBXN3JK4IO5ZRROZBE5L5MZ20PI';
+drinkFinder.windowIsOpen = false;
 
 $(function() {
 	drinkFinder.init();
@@ -89,27 +90,28 @@ drinkFinder.makeMarker = function(location, content){
 		map: map,
 		position: myLatLng
 	});
-	var infowindow = new google.maps.InfoWindow({
-	  content: content
-	});
+	// var infowindow = new google.maps.InfoWindow({
+	//   content: content
+	// });
 
 	marker.addListener('click', function() {
-
+		if (drinkFinder.windowIsOpen === true) {
+			drinkFinder.infowindow.close();
+		}
+		drinkFinder.windowIsOpen = true
 		createInfoWindow(marker, content);
  	});
 };
 
 
 function createInfoWindow(marker, content){
-	
-	var windowIsOpen = false
-	windowIsOpen ? infowindow.close() : null
-	var infowindow = new google.maps.InfoWindow({
+	drinkFinder.infowindow = new google.maps.InfoWindow({
 		content: content
 	});
-	
-	infowindow.open(map, marker);
-	windowIsOpen = true
+
+
+
+	drinkFinder.infowindow.open(map, marker);
 }
 
 
