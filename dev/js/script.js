@@ -88,11 +88,10 @@ drinkFinder.makeMarker = function(location, content){
 	var infowindow = new google.maps.InfoWindow({
 	  content: content
 	});
-	marker.addListener('click', function() {	
 
-		createInfoWindow(marker, content)
-    
+	marker.addListener('click', function() {
 
+		createInfoWindow(marker, content);
  	});
 };
 
@@ -115,6 +114,6 @@ function createInfoWindow(marker, content){
 map.init = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: drinkFinder.latitude, lng: drinkFinder.longitude},
-		zoom: 15
+		zoom: 16
 	});
 };
