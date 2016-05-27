@@ -12,6 +12,14 @@ $(function() {
 
 });
 
+drinkFinder.init = function() {
+	drinkFinder.getGeocode();
+	$('form').on('submit', function(e){
+		e.preventDefault();
+		drinkFinder.getUserChoice();
+	});
+};
+
 drinkFinder.getGeocode = function() {
 	navigator.geolocation.getCurrentPosition(success);
 	function success(position) {
@@ -19,12 +27,13 @@ drinkFinder.getGeocode = function() {
 		drinkFinder.longitude = position.coords.longitude;
 		console.log(drinkFinder.latitude);
 		console.log(drinkFinder.longitude);
-		map.init();
 	};
 };
 
-drinkFinder.init = function() {
-	drinkFinder.getGeocode();
+drinkFinder.getUserChoice = function() {
+	drinkFinder.userChoice = $('input[name=beverage]:checked').val();
+	console.log(drinkFinder.userChoice);
+	drinkFinder.getFourSquare();
 };
 
 drinkFinder.getFourSquare = function() {
@@ -38,10 +47,11 @@ drinkFinder.getFourSquare = function() {
 			v: '20130815',
 			// near: 'New York, NY',
 			ll: drinkFinder.latitude + ',' + drinkFinder.longitude,
-			section: 'coffee'
+			section: drinkFinder.userChoice
 		}
 	}).then(function(squareData) {
 		console.log(squareData);
+		map.init();
 		drinkFinder.result(squareData);
 		// drinkFinder.display(squareData.response)
 	});
@@ -50,7 +60,7 @@ drinkFinder.getFourSquare = function() {
 drinkFinder.result = function(squareData) {
 	drinkFinder.info = squareData.response.groups[0].items;
 	console.log(drinkFinder.info)
-	// drinkFinder.status = squareData.response.groups[0].items[0].venue.hours.status;
+
 	drinkFinder.info.forEach(function(location) {
 		var name = location.venue.name;
 		if(location.venue.hours != undefined){
@@ -61,10 +71,8 @@ drinkFinder.result = function(squareData) {
 		var link = location.venue.url;
 		var twitter = location.venue.contact.twitter;
 		var contentString = "<div class='infoWindow'>" + "<h1>" + name + "</h1>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>" + rating + "</p>" + "<p>" + link + "</p>" + "<p>" + twitter + "</p>";
-		// console.log(name);
-		// console.log(location);
-		drinkFinder.makeMarker(location, contentString);
 
+		drinkFinder.makeMarker(location, contentString);
 	});
 
 };
@@ -94,8 +102,9 @@ function createInfoWindow(marker, content){
 	var windowIsOpen = false
 	windowIsOpen ? infowindow.close() : null
 	var infowindow = new google.maps.InfoWindow({
-	  content: content
+		content: content
 	});
+	
 	infowindow.open(map, marker);
 	windowIsOpen = true
 }
@@ -105,9 +114,7 @@ function createInfoWindow(marker, content){
 // ---------------
 map.init = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
-	  center: {lat: drinkFinder.latitude, lng: drinkFinder.longitude},
-	  zoom: 15
+		center: {lat: drinkFinder.latitude, lng: drinkFinder.longitude},
+		zoom: 15
 	});
-	drinkFinder.getFourSquare();
-
 };
