@@ -242,6 +242,8 @@ input[type=submit] {
   line-height: 20px; }
   .infoWindow h2 {
     margin: 10px 0; }
+  .infoWindow a {
+    color: #8171DE; }
 
 .wrapper {
   width: 100%;
