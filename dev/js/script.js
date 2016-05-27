@@ -86,7 +86,7 @@ drinkFinder.result = function(squareData) {
 		else {var link = '';} 
 		if(location.venue.contact.twitter != undefined){
 		var twitter = location.venue.contact.twitter;}
-		else {var twitter = '';} 
+		else {var twitter = 'not cool enough for twitter :(';} 
 		var contentString = "<div class='infoWindow'>" + "<h2>" + name + "</h2>" + "<p>" + status + "</p>" + "<p>" + address + "</p>" + "<p>" + number + "</p>" + "<p>Rating: " + rating + "</p>" + "<p>" + link + "</p>" + "<p>Twitter: " + twitter + "</p>";
 		
 		drinkFinder.makeMarker(location, contentString);
