@@ -72,6 +72,7 @@ label {
 	display: inline-block;
 	background: rgba(0,0,0,.6);
 	color: #FFF;
+	border-radius: 3px;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 3rem;
 	font-weight: 400;
@@ -80,7 +81,6 @@ label {
 	transition: all .25s;
 
 	&:hover {;
-		border-radius: 3px;
 		box-shadow: 5px 5px 0 0 $purple;
 	}
 }
@@ -93,12 +93,12 @@ input[type=submit] {
 	color: #FFF;
 	border: 3px solid $purple;
 	border-radius: 2px;
-	display: none;
+	opacity: 0;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 1.5rem;
 	font-weight: 400;
 	outline: none;
-	transition: all .25s;
+	transition: all .25s, opacity .8s;
 
 	&:hover {
 		background: $purple;
@@ -137,6 +137,10 @@ input[type=submit] {
 // ----------------
 #map {
 	height: 100%;
+}
+
+.infoWindow {
+	font-size: 1.35rem;
 }
 
 footer {

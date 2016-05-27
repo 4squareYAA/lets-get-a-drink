@@ -31,14 +31,18 @@ drinkFinder.getGeocode = function() {
 		drinkFinder.longitude = position.coords.longitude;
 		console.log(drinkFinder.latitude);
 		console.log(drinkFinder.longitude);
-		$('input[type=submit]').fadeIn(800);
+		$('input[type=submit]').css('opacity', 1);
 	};
 };
 
 drinkFinder.getUserChoice = function() {
 	drinkFinder.userChoice = $('input[name=beverage]:checked').val();
 	console.log(drinkFinder.userChoice);
-	drinkFinder.getFourSquare();
+	if(drinkFinder.userChoice != undefined){
+		drinkFinder.getFourSquare();
+	} else {
+		$('.choose-message').empty().append('Please choose a type of drink.');
+	}
 };
 
 drinkFinder.getFourSquare = function() {
