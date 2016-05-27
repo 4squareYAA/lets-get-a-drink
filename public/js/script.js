@@ -119,8 +119,9 @@ map.init = function() {
 
 		map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: drinkFinder.latitude, lng: drinkFinder.longitude},
-<<<<<<< HEAD
-		zoom: 15})
+		zoom: 16,
+		scrollwheel: false,
+		mapTypeControl: false});
 
 		var styles = [
 		  {
@@ -185,11 +186,8 @@ map.init = function() {
 
 
 
-=======
-		zoom: 16,
-		scrollwheel: false,
-		mapTypeControl: false
-	});
-};
 
->>>>>>> 85eaca2fe63ea1ee13beb51f1a25b4326fcda7e2
+
+
+
+
