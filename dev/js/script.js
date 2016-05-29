@@ -18,7 +18,13 @@ drinkFinder.init = function() {
 	$('form').on('submit', function(e){
 		e.preventDefault();
 		drinkFinder.getUserChoice();
+		$.smoothScroll( {
+			scrollTarget: '#map'
+		});
 	});
+
+	
+
 	$( ".refresh" ).click(function() {
 		location.reload(true);
 	});

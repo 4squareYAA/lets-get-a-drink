@@ -149,9 +149,75 @@ footer {
 
 
 
+
+
 // RESPONSIVE - MEDIA QUERIES
 // --------------------------
 
 @media (max-width: 950px) {
-	
+	.map-container {
+		width: 100%;
+		position: static;
+	}
+
+	.splash-info {
+		width: 100%;
+		padding: 5%;
+	}
+}
+
+@media (max-width: 440px) {
+	h1 {
+		font-size: 4rem;
+	}
+
+	.splash-info {
+		text-align: center;
+	}
+
+	footer {
+		width: 100%;
+		padding: 5%;
+	}
+}
+
+@media (max-width: 375px) {
+
+	h3 {
+		font-size: 1.5rem;
+	}
+	label {
+		margin-right: 0px;
+	}
+
+	input[type=submit] {
+		margin: 0 auto;
+	}
+
+	.splash-info {
+		text-align: center;
+	}
+
+	.title {
+		box-shadow: none;
+	}
+	footer {
+		bottom: 0;
+		text-align: center;
+	}
+}
+
+@media (max-width: 320px) {
+	.title {
+		margin-bottom: 5px;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+	label {
+		padding: 10px;
+	}
+	footer {
+		padding-bottom: 0;
+	}
 }
